@@ -1,0 +1,43 @@
+<div class="container d-flex justify-content-center">
+<%= form_with(model: @album, local:true) do |form| %>
+  <div>
+    <%= form.label :Name %><br>
+    <%= form.text_field :name ,class:"formwidth" %>
+  </div>
+  <div>
+    <%= form.label :Description %><br>
+    <%= form.text_area :description ,class:"formwidth" %>
+       
+  </div>
+
+   <div>
+    <%= form.label :Price %><br>
+    <%= form.text_field :price ,class:"formwidth" %>
+   
+  </div>
+   <br>
+   <div>
+    <%= form.label :Upload_images %><br>
+    <%= form.file_field :images, multiple: true, direct_upload: true %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :upload_a_cover_image %><br>
+    <%= form.file_field :cover_image %>
+  </div>
+
+   <div class="form-group">
+    <%= form.label :published %>
+    <%= form.check_box :published %>
+  </div>
+  <div class="form-group">
+    <%= form.label :tag_names, "Tag" %>
+    <%= form.text_field :tag_names, class: "form-control" %>
+  </div>
+  <div>
+  <br>
+
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

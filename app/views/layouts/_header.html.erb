@@ -9,6 +9,10 @@
         <li class="nav-item">
           <a class="nav-link text-capitalize fs-5" href="<%= new_album_path %>">Create Album</a>
         </li>
+
+         <li class="nav-item">
+          <%= link_to "Album", root_path, class: "nav-link text-capitalize fs-5" %> <!-- This is the new link -->
+        </li>
         <% if user_signed_in? %>
         <li class="nav-item">
           <%=link_to "edit profile", edit_user_registration_path, class:'nav-link text-capitalize fs-5 '%>

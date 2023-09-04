@@ -1,4 +1,4 @@
-<h1 class="text-danger text-center text-uppercase text-decoration-underline lh-lg ">
+<h1 class="text-danger text-center text-uppercase text-decoration-underline lh-lg">
   <%= @album.name %>
 </h1>
 <p class="fs-4 mx-1 text-center">
@@ -16,7 +16,7 @@
             <%= image_tag image, class: "card-img-top", width: "320", height: "240" %>
             <div class="card-body text-center">
               <h5 class="card-title">
-                <% if user_signed_in? %>
+                <% if user_signed_in? && current_user == @album.user %>
                   <%= button_to "Delete", delete_image_album_path(@album, image_id: image.id), method: :delete, data: { confirm: 'Are you sure you want to delete this image?' }, class: "btn btn-danger" %>
                 <% end %>
               </h5>
@@ -33,7 +33,7 @@
   <div class="tags">
     Tag: <%= @album.tags.pluck(:name).join(', ') %>
   </div>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user == @album.user %>
     <button type="button" class="btn btn-link rounded-pill text-uppercase">
       <%= link_to "Edit Album", edit_album_path(@album) %>
     </button>

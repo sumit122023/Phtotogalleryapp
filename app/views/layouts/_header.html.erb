@@ -6,9 +6,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <% if user_signed_in? %>
         <li class="nav-item">
           <a class="nav-link text-capitalize fs-5" href="<%= new_album_path %>">Create Album</a>
         </li>
+        <% end %>
 
          <li class="nav-item">
           <%= link_to "Album", root_path, class: "nav-link text-capitalize fs-5" %> <!-- This is the new link -->

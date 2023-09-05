@@ -9,9 +9,13 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <a class="nav-link text-capitalize fs-5" href="<%= new_album_path %>">Create Album</a>
-          <a class="nav-link text-capitalize fs-5" href="<%= user_album_path %>">My Album</a>
 
         </li>
+        <li class="nav-item">
+          <a class="nav-link text-capitalize fs-5" href="<%= user_albums_path %>">myAlbum</a>
+
+        </li>
+
         <% end %>
 
          <li class="nav-item">

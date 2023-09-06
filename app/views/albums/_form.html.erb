@@ -1,30 +1,31 @@
+ <div class="card-body">
 <div class="container d-flex justify-content-center">
   <%= form_with(model: @album, local: true) do |form| %>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :name, class: "form-label" %>
       <%= form.text_field :name, class: "form-control" %>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :description, class: "form-label" %>
       <%= form.text_area :description, class: "form-control" %>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :price, class: "form-label" %>
       <%= form.text_field :price, class: "form-control" %>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :images, class: "form-label" %>
       <%= form.file_field :images, multiple: true, direct_upload: true, class: "form-control" %>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :cover_image, class: "form-label" %>
       <%= form.file_field :cover_image, class: "form-control" %>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :published, class: "form-check-label" %>
       <%= form.check_box :published, class: "form-check-input" %>
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-group">
       <%= form.label :tag_names, "Tag", class: "form-label" %>
       <%= form.text_field :tag_names, class: "form-control" %>
     </div>
@@ -32,4 +33,5 @@
       <%= form.submit "Create Album", class: "btn btn-primary" %>
     </div>
   <% end %>
+</div>
 </div>

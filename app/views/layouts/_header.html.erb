@@ -19,11 +19,11 @@
         <li class="nav-item">
           <%=link_to "edit profile", edit_user_registration_path, class:'nav-link text-capitalize fs-5 '%>
 
-          
+        
         </li>
 
-            <li>
-  <%= link_to "Sign Out", destroy_user_session_path, class: 'dropdown-item', data: 
+            <li class="nav-item">
+  <%= link_to "Sign Out", destroy_user_session_path, class: 'nav-link text-capitalize fs-5', data: 
           { turbo_method: :delete}%>
 </li>
        

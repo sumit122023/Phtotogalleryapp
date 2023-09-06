@@ -37,14 +37,13 @@
         </li>
         <% end %>
       </ul>
+
+      <div class="d-flex align-items-center">
+  <i class="fa-solid fa-user me-2" style="color: lightblack;"></i>
+  <a href="#" style="color: lightblack; text-decoration: none;"><%= current_user.email %></a>
+</div>
+
     <div class="dropdown">
-
-    <div class="d-flex">
-        <i class="fa-solid fa-user"></i>
-        <a href="#"><%= current_user.email %></a>
-
-      </div>
-
   <!-- Font Awesome icon with a click event -->
   <i class="fa-solid fa-users dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false"></i>
   

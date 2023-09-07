@@ -2,26 +2,27 @@
   <div class="row justify-content-center">
     <h4 class="mt-4 mb-4 display-4">Albums</h4>
   </div>
-    <% if user_signed_in? %>
-  <%= link_to 'Create Album', new_album_path, class: 'btn btn-primary mb-2' %>
+  <% if user_signed_in? %>
+    <%= link_to 'Create Album', new_album_path, class: 'btn btn-primary mb-2' %>
   <% end %>
- <div class="container">
-  <div class="row">
-    <% @albums.each do |album| %>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <% if album.cover_image.attached? %>
-                <%= image_tag url_for(album.cover_image),style:"height:80%;width:100%" %>
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title text-center"><%= link_to album.name, album %></h5>
-            <p class="text-center"><%= album.description %></p>
-             <div class="tags">
-    Tag: <%= album.tags.pluck(:name).join(', ') %>
-  </div>     
+  <div class="container">
+    <div class="row">
+      <% @albums.each do |album| %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <% if album.cover_image.attached? %>
+              <%= image_tag url_for(album.cover_image), style: "height:80%;width:100%" %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title text-center"><%= link_to album.name, album %></h5>
+              <p class="text-center"><%= album.description %></p>
+              <div class="tags">
+                Tag: <%= album.tags.pluck(:name).join(', ') %>
+              </div>     
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

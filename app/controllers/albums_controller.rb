@@ -31,8 +31,7 @@ class AlbumsController < ApplicationController
 
       def edit
         @album = Album.find(params[:id])
-      end
-    
+      end   
       def update
         @album = Album.find(params[:id])
     
@@ -43,27 +42,22 @@ class AlbumsController < ApplicationController
           render :edit, status: :unprocessable_entity
         end
       end
-
       def destroy
         @album = Album.find(params[:id])
         @album.destroy
-    
         redirect_to root_path, status: :see_other
       end
-    
       def delete_image
         @album = Album.find(params[:id])
        image_attachment = @album.images.find(params[:image_id])
        image_attachment.purge 
        redirect_to @album, alert: "image attachment deleted."
       end
-
       private
 
       def set_album
         @album = Album.find(params[:id])
       end
-
       def process_tags
         tag_names = params[:album][:tag_names].split(',').map(&:strip)
         tag_names.each do |tag_name|
